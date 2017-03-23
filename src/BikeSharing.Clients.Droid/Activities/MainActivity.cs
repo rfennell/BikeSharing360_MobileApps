@@ -12,6 +12,10 @@ using FFImageLoading.Forms.Droid;
 using Xamarin.Forms;
 using BikeSharing.Clients.Core;
 using BikeSharing.Clients.Droid.Services;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 
 namespace BikeSharing.Clients.Droid
 {
@@ -24,6 +28,9 @@ namespace BikeSharing.Clients.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            MobileCenter.Start("6d14f031-d191-48ed-b3a7-07d9f8151cad",
+                   typeof(Analytics), typeof(Crashes));
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
